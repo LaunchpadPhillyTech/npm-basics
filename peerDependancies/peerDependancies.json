@@ -1,0 +1,77 @@
+{
+    "name": "@mycompany/react-ui-components",
+    "version": "2.1.0",
+    "description": "A comprehensive React UI component library with theming support",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "rollup -c",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "lint": "eslint src --ext .ts,.tsx",
+        "typecheck": "tsc --noEmit",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook",
+        "prepublishOnly": "npm run test && npm run build"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+        "styled-components": "^5.0.0 || ^6.0.0",
+        "@emotion/react": "^11.0.0",
+        "@emotion/styled": "^11.0.0"
+    },
+    "peerDependenciesMeta": {
+        "styled-components": {
+            "optional": true
+        },
+        "@emotion/react": {
+            "optional": true
+        },
+        "@emotion/styled": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@types/styled-components": "^5.1.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "styled-components": "^6.0.0",
+        "@emotion/react": "^11.10.0",
+        "@emotion/styled": "^11.10.0",
+        "typescript": "^4.9.0",
+        "rollup": "^3.7.0",
+        "@rollup/plugin-typescript": "^10.0.0",
+        "jest": "^29.3.0",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/jest-dom": "^5.16.0",
+        "eslint": "^8.28.0",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0"
+    },
+    "keywords": [
+        "react",
+        "components",
+        "ui",
+        "design-system",
+        "typescript",
+        "styled-components",
+        "emotion"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mycompany/react-ui-components.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=8.0.0"
+    }
+}

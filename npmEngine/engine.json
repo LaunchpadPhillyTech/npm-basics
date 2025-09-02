@@ -1,0 +1,62 @@
+{
+    "name": "engines-field-demo",
+    "version": "2.1.0",
+    "description": "Demonstrates comprehensive engines field usage for environment control",
+    "main": "src/index.js",
+    "scripts": {
+        "preinstall": "node scripts/check-environment.js",
+        "postinstall": "node scripts/verify-installation.js",
+        "start": "node src/index.js",
+        "dev": "NODE_ENV=development nodemon src/index.js",
+        "build": "webpack --mode production",
+        "test": "jest",
+        "test:engines": "npm run test:node16 && npm run test:node18",
+        "test:node16": "docker run --rm -v $(pwd):/app node:16-alpine npm test",
+        "test:node18": "docker run --rm -v $(pwd):/app node:18-alpine npm test",
+        "check-env": "node scripts/check-environment.js",
+        "setup": "npm run check-env && npm install",
+        "docker:build": "docker build -t engines-demo .",
+        "docker:run": "docker run -p 3000:3000 engines-demo"
+    },
+    "engines": {
+        "node": ">=16.14.0 <20.0.0",
+        "npm": ">=8.5.0 <11.0.0",
+        "yarn": ">=1.22.0 <4.0.0",
+        "pnpm": ">=7.0.0 <9.0.0"
+    },
+    "packageManager": "pnpm@8.6.0",
+    "dependencies": {
+        "express": "^4.18.2",
+        "cors": "^2.8.5",
+        "helmet": "^6.0.1",
+        "compression": "^1.7.4",
+        "winston": "^3.8.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^5.0.0",
+        "jest": "^29.3.0",
+        "eslint": "^8.28.0",
+        "prettier": "^2.8.0",
+        "semver": "^7.3.8",
+        "only-allow": "^1.1.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/example/engines-field-demo.git"
+    },
+    "keywords": [
+        "engines",
+        "node",
+        "npm",
+        "environment",
+        "version-control"
+    ],
+    "author": "Development Team",
+    "license": "MIT",
+    "volta": {
+        "node": "18.16.0",
+        "npm": "9.5.1"
+    }
+}
